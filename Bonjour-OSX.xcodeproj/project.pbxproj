@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF9552A519E906DD00628D82 /* VMBonjourManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9552A419E906DD00628D82 /* VMBonjourManager.m */; };
+		DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A619E918B700628D82 /* Foundation.framework */; };
+		DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A819E918BD00628D82 /* CFNetwork.framework */; };
 		DFBFD7EA19E8CCD9006BD016 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFD7E919E8CCD9006BD016 /* main.m */; };
 		DFBFD7ED19E8CCD9006BD016 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFD7EC19E8CCD9006BD016 /* AppDelegate.m */; };
 		DFBFD7EF19E8CCD9006BD016 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */; };
@@ -25,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF9552A319E906DD00628D82 /* VMBonjourManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMBonjourManager.h; sourceTree = "<group>"; };
+		DF9552A419E906DD00628D82 /* VMBonjourManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMBonjourManager.m; sourceTree = "<group>"; };
+		DF9552A619E918B700628D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DF9552A819E918BD00628D82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DF9552AB19E91BE300628D82 /* Bonjour-OSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bonjour-OSX.entitlements"; sourceTree = "<group>"; };
 		DFBFD7E419E8CCD9006BD016 /* Bonjour-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBFD7E819E8CCD9006BD016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFBFD7E919E8CCD9006BD016 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */,
+				DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,11 +65,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF9552A219E906C500628D82 /* VMBonjourManager */ = {
+			isa = PBXGroup;
+			children = (
+				DF9552A319E906DD00628D82 /* VMBonjourManager.h */,
+				DF9552A419E906DD00628D82 /* VMBonjourManager.m */,
+			);
+			name = VMBonjourManager;
+			sourceTree = "<group>";
+		};
+		DF9552AA19E918CA00628D82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF9552A819E918BD00628D82 /* CFNetwork.framework */,
+				DF9552A619E918B700628D82 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			path = "Bonjour-OSX";
+			sourceTree = "<group>";
+		};
 		DFBFD7DB19E8CCD9006BD016 = {
 			isa = PBXGroup;
 			children = (
 				DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */,
 				DFBFD7FA19E8CCD9006BD016 /* Bonjour-OSXTests */,
+				DF9552AA19E918CA00628D82 /* Frameworks */,
 				DFBFD7E519E8CCD9006BD016 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +106,8 @@
 		DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				DF9552AB19E91BE300628D82 /* Bonjour-OSX.entitlements */,
+				DF9552A219E906C500628D82 /* VMBonjourManager */,
 				DFBFD7EB19E8CCD9006BD016 /* AppDelegate.h */,
 				DFBFD7EC19E8CCD9006BD016 /* AppDelegate.m */,
 				DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */,
@@ -160,6 +192,11 @@
 				TargetAttributes = {
 					DFBFD7E319E8CCD9006BD016 = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					DFBFD7F619E8CCD9006BD016 = {
 						CreatedOnToolsVersion = 6.0;
@@ -212,6 +249,7 @@
 			files = (
 				DFBFD7ED19E8CCD9006BD016 /* AppDelegate.m in Sources */,
 				DFBFD7EA19E8CCD9006BD016 /* main.m in Sources */,
+				DF9552A519E906DD00628D82 /* VMBonjourManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bonjour-OSX/Bonjour-OSX.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Bonjour-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -336,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Bonjour-OSX/Bonjour-OSX.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Bonjour-OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -398,6 +438,7 @@
 				DFBFD80319E8CCD9006BD016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFBFD80419E8CCD9006BD016 /* Build configuration list for PBXNativeTarget "Bonjour-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +447,7 @@
 				DFBFD80619E8CCD9006BD016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
