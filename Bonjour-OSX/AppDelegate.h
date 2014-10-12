@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "VMBonjourManager.h"
+#import <BonjourSDK/BonjourSDK.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, VMBonjourPublishDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, BSBonjourPublishDelegate>
 
 
 @end

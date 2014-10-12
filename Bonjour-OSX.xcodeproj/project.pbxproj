@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF42255819EA4E1C004C893D /* BonjourSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF42255319EA4E10004C893D /* BonjourSDK.framework */; };
 		DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A619E918B700628D82 /* Foundation.framework */; };
 		DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A819E918BD00628D82 /* CFNetwork.framework */; };
 		DFBFD7EA19E8CCD9006BD016 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFD7E919E8CCD9006BD016 /* main.m */; };
@@ -15,7 +16,32 @@
 		DFBFD7F219E8CCD9006BD016 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFBFD7F019E8CCD9006BD016 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DF42255219EA4E10004C893D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DF7D1C9C19EA466300EB0487;
+			remoteInfo = BonjourSDK_OSX;
+		};
+		DF42255419EA4E10004C893D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DFB9F59E19EA4CB4001F8A04;
+			remoteInfo = BonjourSDK_iOS;
+		};
+		DF42255619EA4E16004C893D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DF7D1C9B19EA466300EB0487;
+			remoteInfo = BonjourSDK_OSX;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BonjourSDK.xcodeproj; path = BonjourSDK/BonjourSDK.xcodeproj; sourceTree = "<group>"; };
 		DF9552A619E918B700628D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF9552A819E918BD00628D82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DF9552AB19E91BE300628D82 /* Bonjour-OSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bonjour-OSX.entitlements"; sourceTree = "<group>"; };
@@ -33,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF42255819EA4E1C004C893D /* BonjourSDK.framework in Frameworks */,
 				DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */,
 				DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */,
 			);
@@ -41,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF42254E19EA4E10004C893D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF42255319EA4E10004C893D /* BonjourSDK.framework */,
+				DF42255519EA4E10004C893D /* BonjourSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		DF9552AA19E918CA00628D82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +90,7 @@
 		DFBFD7DB19E8CCD9006BD016 = {
 			isa = PBXGroup;
 			children = (
+				DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */,
 				DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */,
 				DF9552AA19E918CA00628D82 /* Frameworks */,
 				DFBFD7E519E8CCD9006BD016 /* Products */,
@@ -104,6 +141,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DF42255719EA4E16004C893D /* PBXTargetDependency */,
 			);
 			name = "Bonjour-OSX";
 			productName = "Bonjour-OSX";
@@ -140,12 +178,35 @@
 			mainGroup = DFBFD7DB19E8CCD9006BD016;
 			productRefGroup = DFBFD7E519E8CCD9006BD016 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DF42254E19EA4E10004C893D /* Products */;
+					ProjectRef = DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DFBFD7E319E8CCD9006BD016 /* Bonjour-OSX */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DF42255319EA4E10004C893D /* BonjourSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BonjourSDK.framework;
+			remoteRef = DF42255219EA4E10004C893D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DF42255519EA4E10004C893D /* BonjourSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BonjourSDK.framework;
+			remoteRef = DF42255419EA4E10004C893D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DFBFD7E219E8CCD9006BD016 /* Resources */ = {
@@ -170,6 +231,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF42255719EA4E16004C893D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BonjourSDK_OSX;
+			targetProxy = DF42255619EA4E16004C893D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DFBFD7F019E8CCD9006BD016 /* MainMenu.xib */ = {

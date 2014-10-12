@@ -21,7 +21,7 @@
 
 @property (weak) IBOutlet NSWindow *window;
 
-@property (nonatomic, strong) VMBonjourManager *bonjourManager;
+@property (nonatomic, strong) BSBonjourManager *bonjourManager;
 
 @property (nonatomic, assign, readonly ) BOOL               isStarted;
 @property (nonatomic, assign, readonly ) BOOL               isReceiving;
@@ -35,7 +35,7 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    self.bonjourManager = [VMBonjourManager sharedManager];
+    self.bonjourManager = [BSBonjourManager sharedManager];
 
     [self startServer];
 }
@@ -151,7 +151,7 @@ static void AcceptCallback(CFSocketRef s, CFSocketCallBackType type, CFDataRef a
 }
 
 #pragma mark -
-#pragma mark VMBonjourPublishDelegate
+#pragma mark BSBonjourPublishDelegate
 - (void)published:(NSString *)name {
     NSLog(@"Service Published with Name: %@", name);
 }
