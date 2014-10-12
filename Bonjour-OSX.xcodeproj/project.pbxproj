@@ -77,6 +77,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DF42255919EA4EE0004C893D /* BonjourSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */,
+			);
+			name = BonjourSDK;
+			sourceTree = "<group>";
+		};
 		DF9552AA19E918CA00628D82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +98,8 @@
 		DFBFD7DB19E8CCD9006BD016 = {
 			isa = PBXGroup;
 			children = (
-				DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */,
 				DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */,
+				DF42255919EA4EE0004C893D /* BonjourSDK */,
 				DF9552AA19E918CA00628D82 /* Frameworks */,
 				DFBFD7E519E8CCD9006BD016 /* Products */,
 			);
