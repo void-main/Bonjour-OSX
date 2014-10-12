@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF9552A519E906DD00628D82 /* VMBonjourManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9552A419E906DD00628D82 /* VMBonjourManager.m */; };
 		DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A619E918B700628D82 /* Foundation.framework */; };
 		DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A819E918BD00628D82 /* CFNetwork.framework */; };
 		DFBFD7EA19E8CCD9006BD016 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFD7E919E8CCD9006BD016 /* main.m */; };
 		DFBFD7ED19E8CCD9006BD016 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFD7EC19E8CCD9006BD016 /* AppDelegate.m */; };
 		DFBFD7EF19E8CCD9006BD016 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */; };
 		DFBFD7F219E8CCD9006BD016 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFBFD7F019E8CCD9006BD016 /* MainMenu.xib */; };
-		DFBFD7FE19E8CCD9006BD016 /* Bonjour_OSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFD7FD19E8CCD9006BD016 /* Bonjour_OSXTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF9552A319E906DD00628D82 /* VMBonjourManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMBonjourManager.h; sourceTree = "<group>"; };
-		DF9552A419E906DD00628D82 /* VMBonjourManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMBonjourManager.m; sourceTree = "<group>"; };
 		DF9552A619E918B700628D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF9552A819E918BD00628D82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DF9552AB19E91BE300628D82 /* Bonjour-OSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bonjour-OSX.entitlements"; sourceTree = "<group>"; };
@@ -41,8 +37,6 @@
 		DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFBFD7F119E8CCD9006BD016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DFBFD7F719E8CCD9006BD016 /* Bonjour-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bonjour-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFBFD7FC19E8CCD9006BD016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFBFD7FD19E8CCD9006BD016 /* Bonjour_OSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bonjour_OSXTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF9552A219E906C500628D82 /* VMBonjourManager */ = {
-			isa = PBXGroup;
-			children = (
-				DF9552A319E906DD00628D82 /* VMBonjourManager.h */,
-				DF9552A419E906DD00628D82 /* VMBonjourManager.m */,
-			);
-			name = VMBonjourManager;
-			sourceTree = "<group>";
-		};
 		DF9552AA19E918CA00628D82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */,
-				DFBFD7FA19E8CCD9006BD016 /* Bonjour-OSXTests */,
 				DF9552AA19E918CA00628D82 /* Frameworks */,
 				DFBFD7E519E8CCD9006BD016 /* Products */,
 			);
@@ -106,8 +90,6 @@
 		DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */ = {
 			isa = PBXGroup;
 			children = (
-				DF9552AB19E91BE300628D82 /* Bonjour-OSX.entitlements */,
-				DF9552A219E906C500628D82 /* VMBonjourManager */,
 				DFBFD7EB19E8CCD9006BD016 /* AppDelegate.h */,
 				DFBFD7EC19E8CCD9006BD016 /* AppDelegate.m */,
 				DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */,
@@ -120,25 +102,9 @@
 		DFBFD7E719E8CCD9006BD016 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF9552AB19E91BE300628D82 /* Bonjour-OSX.entitlements */,
 				DFBFD7E819E8CCD9006BD016 /* Info.plist */,
 				DFBFD7E919E8CCD9006BD016 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DFBFD7FA19E8CCD9006BD016 /* Bonjour-OSXTests */ = {
-			isa = PBXGroup;
-			children = (
-				DFBFD7FD19E8CCD9006BD016 /* Bonjour_OSXTests.m */,
-				DFBFD7FB19E8CCD9006BD016 /* Supporting Files */,
-			);
-			path = "Bonjour-OSXTests";
-			sourceTree = "<group>";
-		};
-		DFBFD7FB19E8CCD9006BD016 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DFBFD7FC19E8CCD9006BD016 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,7 +215,6 @@
 			files = (
 				DFBFD7ED19E8CCD9006BD016 /* AppDelegate.m in Sources */,
 				DFBFD7EA19E8CCD9006BD016 /* main.m in Sources */,
-				DF9552A519E906DD00628D82 /* VMBonjourManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +222,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFBFD7FE19E8CCD9006BD016 /* Bonjour_OSXTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
