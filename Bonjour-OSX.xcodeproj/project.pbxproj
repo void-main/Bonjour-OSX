@@ -15,16 +15,6 @@
 		DFBFD7F219E8CCD9006BD016 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFBFD7F019E8CCD9006BD016 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DFBFD7F819E8CCD9006BD016 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DFBFD7DC19E8CCD9006BD016 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DFBFD7E319E8CCD9006BD016;
-			remoteInfo = "Bonjour-OSX";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		DF9552A619E918B700628D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF9552A819E918BD00628D82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -36,7 +26,6 @@
 		DFBFD7EC19E8CCD9006BD016 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFBFD7F119E8CCD9006BD016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		DFBFD7F719E8CCD9006BD016 /* Bonjour-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bonjour-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,13 +35,6 @@
 			files = (
 				DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */,
 				DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFBFD7F419E8CCD9006BD016 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				DFBFD7E419E8CCD9006BD016 /* Bonjour-OSX.app */,
-				DFBFD7F719E8CCD9006BD016 /* Bonjour-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,24 +110,6 @@
 			productReference = DFBFD7E419E8CCD9006BD016 /* Bonjour-OSX.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DFBFD7F619E8CCD9006BD016 /* Bonjour-OSXTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFBFD80419E8CCD9006BD016 /* Build configuration list for PBXNativeTarget "Bonjour-OSXTests" */;
-			buildPhases = (
-				DFBFD7F319E8CCD9006BD016 /* Sources */,
-				DFBFD7F419E8CCD9006BD016 /* Frameworks */,
-				DFBFD7F519E8CCD9006BD016 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DFBFD7F919E8CCD9006BD016 /* PBXTargetDependency */,
-			);
-			name = "Bonjour-OSXTests";
-			productName = "Bonjour-OSXTests";
-			productReference = DFBFD7F719E8CCD9006BD016 /* Bonjour-OSXTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,10 +127,6 @@
 							};
 						};
 					};
-					DFBFD7F619E8CCD9006BD016 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = DFBFD7E319E8CCD9006BD016;
-					};
 				};
 			};
 			buildConfigurationList = DFBFD7DF19E8CCD9006BD016 /* Build configuration list for PBXProject "Bonjour-OSX" */;
@@ -184,7 +143,6 @@
 			projectRoot = "";
 			targets = (
 				DFBFD7E319E8CCD9006BD016 /* Bonjour-OSX */,
-				DFBFD7F619E8CCD9006BD016 /* Bonjour-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -196,13 +154,6 @@
 			files = (
 				DFBFD7EF19E8CCD9006BD016 /* Images.xcassets in Resources */,
 				DFBFD7F219E8CCD9006BD016 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFBFD7F519E8CCD9006BD016 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,22 +169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFBFD7F319E8CCD9006BD016 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DFBFD7F919E8CCD9006BD016 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DFBFD7E319E8CCD9006BD016 /* Bonjour-OSX */;
-			targetProxy = DFBFD7F819E8CCD9006BD016 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DFBFD7F019E8CCD9006BD016 /* MainMenu.xib */ = {
@@ -347,42 +283,6 @@
 			};
 			name = Release;
 		};
-		DFBFD80519E8CCD9006BD016 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bonjour-OSXTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonjour-OSX.app/Contents/MacOS/Bonjour-OSX";
-			};
-			name = Debug;
-		};
-		DFBFD80619E8CCD9006BD016 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Bonjour-OSXTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bonjour-OSX.app/Contents/MacOS/Bonjour-OSX";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,15 +300,6 @@
 			buildConfigurations = (
 				DFBFD80219E8CCD9006BD016 /* Debug */,
 				DFBFD80319E8CCD9006BD016 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DFBFD80419E8CCD9006BD016 /* Build configuration list for PBXNativeTarget "Bonjour-OSXTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DFBFD80519E8CCD9006BD016 /* Debug */,
-				DFBFD80619E8CCD9006BD016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
