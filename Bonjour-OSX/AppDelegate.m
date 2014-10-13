@@ -72,8 +72,9 @@
 {
     [self.bonjourManager publish:kServiceName
                transportProtocol:kServiceProtocol
-                            port:0
-                        delegate:self];
+                        delegate:self
+                  streamDelegate:self
+                           error:nil];
 }
 
 - (void)stopServer
@@ -105,6 +106,11 @@
 - (void)serviceStopped:(NSString *)name {
     self.statusText = @"Service Stopped";
     self.status = Stopped;
+}
+
+- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
+{
+    // TODO
 }
 
 @end
