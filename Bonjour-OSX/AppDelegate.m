@@ -19,15 +19,15 @@
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSTextField *mainTextField;
 
 @property (nonatomic, strong) BSBonjourManager *bonjourManager;
 
 @property (nonatomic, assign) ServiceStartStatus status;
 @property (nonatomic, strong) NSString *         statusText;
 
+@property (nonatomic, strong) NSString *         sharedText;
+
 @property (nonatomic, strong, readwrite) NSNetService *     netService;
-@property (nonatomic, assign, readwrite) CFSocketRef        listeningSocket;
 
 @end
 
