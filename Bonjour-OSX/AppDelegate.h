@@ -9,6 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import <BonjourSDK/BonjourSDK.h>
 
+typedef enum : NSInteger {
+    Starting,
+    Started,
+    Stopping,
+    Stopped,
+} ServiceStartStatus;
+
 @interface AppDelegate : NSObject <NSApplicationDelegate, BSBonjourPublishDelegate>
 
 

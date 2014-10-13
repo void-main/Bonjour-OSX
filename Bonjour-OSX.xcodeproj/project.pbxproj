@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF170D6B19EBB3EA0063B192 /* BJPublishActionButtonTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF170D6A19EBB3EA0063B192 /* BJPublishActionButtonTransformer.m */; };
+		DF170D7019EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF170D6F19EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.m */; };
 		DF42255819EA4E1C004C893D /* BonjourSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF42255319EA4E10004C893D /* BonjourSDK.framework */; };
 		DF9552A719E918B700628D82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A619E918B700628D82 /* Foundation.framework */; };
 		DF9552A919E918BD00628D82 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9552A819E918BD00628D82 /* CFNetwork.framework */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF170D6919EBB3EA0063B192 /* BJPublishActionButtonTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJPublishActionButtonTransformer.h; sourceTree = "<group>"; };
+		DF170D6A19EBB3EA0063B192 /* BJPublishActionButtonTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJPublishActionButtonTransformer.m; sourceTree = "<group>"; };
+		DF170D6E19EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJPublishActionButtonEnableTransformer.h; sourceTree = "<group>"; };
+		DF170D6F19EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJPublishActionButtonEnableTransformer.m; sourceTree = "<group>"; };
 		DF42254D19EA4E10004C893D /* BonjourSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BonjourSDK.xcodeproj; path = BonjourSDK/BonjourSDK.xcodeproj; sourceTree = "<group>"; };
 		DF9552A619E918B700628D82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF9552A819E918BD00628D82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -68,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF170D6D19EBB4700063B192 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF170D6919EBB3EA0063B192 /* BJPublishActionButtonTransformer.h */,
+				DF170D6A19EBB3EA0063B192 /* BJPublishActionButtonTransformer.m */,
+				DF170D6E19EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.h */,
+				DF170D6F19EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		DF42254E19EA4E10004C893D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +133,7 @@
 		DFBFD7E619E8CCD9006BD016 /* Bonjour-OSX */ = {
 			isa = PBXGroup;
 			children = (
+				DF170D6D19EBB4700063B192 /* Utils */,
 				DFBFD7EB19E8CCD9006BD016 /* AppDelegate.h */,
 				DFBFD7EC19E8CCD9006BD016 /* AppDelegate.m */,
 				DFBFD7EE19E8CCD9006BD016 /* Images.xcassets */,
@@ -233,7 +251,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF170D6B19EBB3EA0063B192 /* BJPublishActionButtonTransformer.m in Sources */,
 				DFBFD7ED19E8CCD9006BD016 /* AppDelegate.m in Sources */,
+				DF170D7019EBB6B60063B192 /* BJPublishActionButtonEnableTransformer.m in Sources */,
 				DFBFD7EA19E8CCD9006BD016 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
