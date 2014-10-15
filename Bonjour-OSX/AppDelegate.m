@@ -16,7 +16,10 @@
 #define kServiceName     @"share_editor"
 #define kServiceProtocol @"tcp"
 
-@interface AppDelegate ()
+@interface AppDelegate () {
+    NSMutableData *_readInData;
+    NSNumber      *_bytesRead;
+}
 
 @property (weak) IBOutlet NSWindow *window;
 
@@ -110,7 +113,38 @@
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
 {
-    // TODO
+    NSLog(@"Got here %lu!", eventCode);
+    switch (eventCode) {
+            // Handle input stream
+        case NSStreamEventOpenCompleted:
+            _readInData = nil;
+            _bytesRead = [NSNumber numberWithInteger:0];
+            break;
+        case NSStreamEventHasBytesAvailable:
+            if (!_readInData) {
+                _readInData = [NSMutableData data];
+            }
+
+            uint8_t buf[1024];
+            NSInteger len = 0;
+            len = [(NSInputStream *)aStream read:buf maxLength:1024];
+            if (len) {
+                [_readInData appendBytes:buf length:len];
+                _bytesRead = [NSNumber numberWithInteger:([_bytesRead integerValue] + len)];
+            } else {
+                NSLog(@"no buffer!");
+            }
+            break;
+        case NSStreamEventEndEncountered:
+            self.sharedText = [[NSString alloc] initWithData:_readInData encoding:NSUTF8StringEncoding];
+            _readInData = nil;
+            _bytesRead = [NSNumber numberWithInteger:0];
+            break;
+        case NSStreamEventHasSpaceAvailable:
+            break;
+        default:
+            break;
+    }
 }
 
 @end
