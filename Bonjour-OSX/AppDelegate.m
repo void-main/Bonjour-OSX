@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import <BonjourSDK/BSBonjourManager.h>
+#import <BonjourSDK/BonjourSDK.h>
 
 #import "BJPublishActionButtonTransformer.h"
 #import "BJPublishActionButtonEnableTransformer.h"
@@ -22,13 +22,12 @@
 }
 
 @property (weak) IBOutlet NSWindow *window;
+@property (unsafe_unretained) IBOutlet NSTextView *editor;
 
-@property (nonatomic, strong) BSBonjourManager *bonjourManager;
+@property (nonatomic, strong) BSBonjourServer *bonjourServer;
 
 @property (nonatomic, assign) ServiceStartStatus status;
 @property (nonatomic, strong) NSString *         statusText;
-
-@property (nonatomic, strong) NSString *         sharedText;
 
 @property (nonatomic, strong, readwrite) NSNetService *     netService;
 
@@ -49,7 +48,9 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    self.bonjourManager = [BSBonjourManager sharedManager];
+    self.bonjourServer = [[BSBonjourServer alloc] initWithServiceType:kServiceName
+                                                    transportProtocol:kServiceProtocol
+                                                             delegate:self];
 
     self.status = Stopped;
     self.statusText = @"Not Published";
@@ -73,21 +74,16 @@
 
 - (void)startServer
 {
-    [self.bonjourManager publish:kServiceName
-               transportProtocol:kServiceProtocol
-                        delegate:self
-                  streamDelegate:self
-                           error:nil];
+    [self.bonjourServer publish];
 }
 
 - (void)stopServer
 {
-    [self.bonjourManager reclaim:kServiceName
-               transportProtocol:kServiceProtocol];
+    [self.bonjourServer unpublish];
 }
 
 #pragma mark -
-#pragma mark BSBonjourPublishDelegate
+#pragma mark BSBonjourServerDelegate
 - (void)published:(NSString *)name {
     self.status = Started;
     self.statusText = [NSString stringWithFormat:@"Service published with name: %@", name];
@@ -111,40 +107,20 @@
     self.status = Stopped;
 }
 
-- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
-{
-    NSLog(@"Got here %lu!", eventCode);
-    switch (eventCode) {
-            // Handle input stream
-        case NSStreamEventOpenCompleted:
-            _readInData = nil;
-            _bytesRead = [NSNumber numberWithInteger:0];
-            break;
-        case NSStreamEventHasBytesAvailable:
-            if (!_readInData) {
-                _readInData = [NSMutableData data];
-            }
+- (void)connectionEstablished:(BSBonjourConnection *)connection {
+    [connection sendData:[self.editor.string dataUsingEncoding:NSUTF8StringEncoding]];
+}
 
-            uint8_t buf[1024];
-            NSInteger len = 0;
-            len = [(NSInputStream *)aStream read:buf maxLength:1024];
-            if (len) {
-                [_readInData appendBytes:buf length:len];
-                _bytesRead = [NSNumber numberWithInteger:([_bytesRead integerValue] + len)];
-            } else {
-                NSLog(@"no buffer!");
-            }
-            break;
-        case NSStreamEventEndEncountered:
-            self.sharedText = [[NSString alloc] initWithData:_readInData encoding:NSUTF8StringEncoding];
-            _readInData = nil;
-            _bytesRead = [NSNumber numberWithInteger:0];
-            break;
-        case NSStreamEventHasSpaceAvailable:
-            break;
-        default:
-            break;
-    }
+- (void)connectionAttemptFailed:(BSBonjourConnection *)connection {
+    NSLog(@"Connection Failed...");
+}
+
+- (void)connectionTerminated:(BSBonjourConnection *)connection {
+    NSLog(@"Connection Terminated!");
+}
+
+- (void)receivedData:(NSData *)data {
+    self.editor.string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end
